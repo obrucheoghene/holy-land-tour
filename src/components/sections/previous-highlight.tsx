@@ -55,7 +55,7 @@ const galleryItems = [
   },
 ];
 
-export default function GalleryPreview() {
+export default function PreviousHighlight() {
   const [selectedItem, setSelectedItem] = useState<number | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
