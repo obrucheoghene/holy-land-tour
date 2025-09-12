@@ -1,26 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Tailwind v4 Theme Configuration */
+@theme {
+  /* Ministry brand colors - Gold, Blue, White theme */
+  --color-primary-50: #fef7e6;
+  --color-primary-100: #fcedc3;
+  --color-primary-200: #f9d580;
+  --color-primary-300: #f6be3d;
+  --color-primary-400: #f3a712;
+  --color-primary-500: #e09000;
+  /* Main gold */
+  --color-primary-600: #c07a00;
+  --color-primary-700: #a06500;
+  --color-primary-800: #805000;
+  --color-primary-900: #603b00;
+  --color-primary-950: #402600;
+
+  --color-secondary-50: #e6f3ff;
+  --color-secondary-100: #b8dcff;
+  --color-secondary-200: #8ac5ff;
+  --color-secondary-300: #5caeff;
+  --color-secondary-400: #2e97ff;
+  --color-secondary-500: #0080ff;
+  /* Main blue */
+  --color-secondary-600: #0066cc;
+  --color-secondary-700: #004d99;
+  --color-secondary-800: #003366;
+  --color-secondary-900: #001a33;
+  --color-secondary-950: #000d1a;
+
+  /* ShadCN UI Compatible Variables */
+  --color-background: 0 0% 100%;
+  --color-foreground: 222.2 84% 4.9%;
+  --color-card: 0 0% 100%;
+  --color-card-foreground: 222.2 84% 4.9%;
+  --color-popover: 0 0% 100%;
+  --color-popover-foreground: 222.2 84% 4.9%;
+  --color-muted: 210 40% 98%;
+  --color-muted-foreground: 215.4 16.3% 46.9%;
+  --color-border: 214.3 31.8% 91.4%;
+  --color-input: 214.3 31.8% 91.4%;
+  --color-ring: 222.2 84% 4.9%;
+  --color-accent: 210 40% 98%;
+  --color-accent-foreground: 222.2 84% 4.9%;
+  --color-destructive: 0 84.2% 60.2%;
+  --color-destructive-foreground: 210 40% 98%;
+
+  /* Border radius */
+  --radius: 0.5rem;
+
+  /* Font families */
+  --font-family-sans: Inter, system-ui, sans-serif;
+  --font-family-serif: "Playfair Display", serif;
+
+  /* Container sizes */
+  --container-2xl: 1400px;
+
+  /* Custom animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-fade-in: fade-in 0.6s ease-out;
+  --animate-slide-in: slide-in 0.6s ease-out;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* Dark mode theme (optional) */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @theme {
+    --color-background: 222.2 84% 4.9%;
+    --color-foreground: 210 40% 98%;
+    --color-card: 222.2 84% 4.9%;
+    --color-card-foreground: 210 40% 98%;
+    --color-popover: 222.2 84% 4.9%;
+    --color-popover-foreground: 210 40% 98%;
+    --color-muted: 217.2 32.6% 17.5%;
+    --color-muted-foreground: 215 20.2% 65.1%;
+    --color-border: 217.2 32.6% 17.5%;
+    --color-input: 217.2 32.6% 17.5%;
+    --color-accent: 217.2 32.6% 17.5%;
+    --color-accent-foreground: 210 40% 98%;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Keyframes for animations */
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: var(--radix-accordion-content-height);
+  }
 }
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+
+  to {
+    height: 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Base styles */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
+
+/* Component styles */
+@layer components {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: var(--container-2xl);
+  }
+
+  .btn-primary {
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200;
+  }
+
+  .card-holy {
+    @apply bg-white rounded-xl shadow-lg border border-gray-100 p-6;
+  }
+
+  .gradient-holy {
+    @apply bg-gradient-to-br from-primary-400 via-primary-500 to-secondary-500;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent;
+  }
+}
+
+/* Google Fonts */
