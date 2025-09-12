@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Users } from "lucide-react";
+import Link from "next/link";
 
 interface TimeLeft {
   days: number;
@@ -47,13 +48,13 @@ export default function HeroSection() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1544967882-7ad4b41b7de1?q=80&w=2070"
+          src="/assets/hlt-pst1.jpg"
           alt="Jerusalem - Holy Land"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/60" />
       </div>
 
       {/* Content */}
@@ -76,16 +77,16 @@ export default function HeroSection() {
         <div className="flex flex-wrap justify-center gap-6 mb-12 text-lg">
           <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
             <Calendar className="w-5 h-5 text-primary-300" />
-            <span>March 15-25, 2025</span>
+            <span>December 10-15, 2025</span>
           </div>
           <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
             <MapPin className="w-5 h-5 text-primary-300" />
-            <span>Israel & Palestine</span>
+            <span>Israel</span>
           </div>
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
+          {/* <div className="flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
             <Users className="w-5 h-5 text-primary-300" />
             <span>Limited to 50 Pilgrims</span>
-          </div>
+          </div> */}
         </div>
 
         {/* Countdown Timer */}
@@ -112,26 +113,23 @@ export default function HeroSection() {
 
         {/* Call to Action Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
-            size="lg"
-            className="btn-primary text-lg px-8 py-4 bg-primary-500 hover:bg-primary-600 transform hover:scale-105 transition-all duration-200"
-          >
-            Register Now - $299
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="btn-outline text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-gray-900 transform hover:scale-105 transition-all duration-200"
-          >
-            Book Hotel
-          </Button>
-        </div>
-
-        {/* Early Bird Notice */}
-        <div className="mt-8 p-4 bg-secondary-500/20 backdrop-blur-sm rounded-lg border border-secondary-300/30 max-w-md mx-auto">
-          <p className="text-secondary-200 font-medium">
-            🎯 Early Bird Special: Register by February 15th and save $50!
-          </p>
+          <Link href="/register">
+            <Button
+              size="lg"
+              className="btn-primary text-lg px-8 py-4 bg-primary-500 hover:bg-primary-600 transform hover:scale-105 transition-all duration-200"
+            >
+              Register Now
+            </Button>
+          </Link>
+          <Link href="/hotel-booking">
+            <Button
+              size="lg"
+              variant="outline"
+              className="btn-outline text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-gray-900 transform hover:scale-105 transition-all duration-200"
+            >
+              Book Hotel
+            </Button>
+          </Link>
         </div>
       </div>
 

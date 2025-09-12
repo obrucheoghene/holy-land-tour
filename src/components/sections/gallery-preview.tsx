@@ -8,7 +8,7 @@ const galleryItems = [
   {
     id: 1,
     type: "image",
-    src: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070",
+    src: "/assets/hlt-pst-12.jpg",
     alt: "Jerusalem Old City",
     title: "Jerusalem Old City",
     description: "Walking through the ancient streets of Jerusalem",
@@ -16,7 +16,7 @@ const galleryItems = [
   {
     id: 2,
     type: "image",
-    src: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?q=80&w=2070",
+    src: "/assets/hlt-pst15.jpg",
     alt: "Sea of Galilee",
     title: "Sea of Galilee",
     description: "Peaceful moments by the Sea of Galilee",
@@ -24,7 +24,7 @@ const galleryItems = [
   {
     id: 3,
     type: "video",
-    src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2070",
+    src: "/assets/hlt-pst10.jpg",
     alt: "Bethlehem Tour",
     title: "Bethlehem Experience",
     description: "Previous tour participants share their experience",
@@ -32,7 +32,7 @@ const galleryItems = [
   {
     id: 4,
     type: "image",
-    src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2070",
+    src: "/assets/hlt-pst-8.jpg",
     alt: "Dead Sea",
     title: "Dead Sea Float",
     description: "The unique experience of floating in the Dead Sea",
@@ -40,7 +40,7 @@ const galleryItems = [
   {
     id: 5,
     type: "image",
-    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2070",
+    src: "/assets/hlt-pst9.jpg",
     alt: "Group Prayer",
     title: "Group Prayer",
     description: "Spiritual moments with fellow pilgrims",
@@ -48,7 +48,7 @@ const galleryItems = [
   {
     id: 6,
     type: "image",
-    src: "https://images.unsplash.com/photo-1544967882-7ad4b41b7de1?q=80&w=2070",
+    src: "/assets/hlt-pst14.jpg",
     alt: "Western Wall",
     title: "Western Wall",
     description: "Prayers at the holiest site in Judaism",
@@ -87,7 +87,7 @@ export default function GalleryPreview() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 text-stone-900">
-            Gallery <span className="text-gradient">Preview</span>
+            Previous Tour <span className="text-gradient">Highlights</span>
           </h2>
           <p className="text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
             Get a glimpse of the incredible experiences and sacred moments from
@@ -139,25 +139,6 @@ export default function GalleryPreview() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center">
-          <h3 className="text-2xl font-serif font-bold text-stone-900 mb-4">
-            Want to See More?
-          </h3>
-          <p className="text-lg text-stone-600 mb-8">
-            View our complete photo gallery and video testimonials from past
-            tours
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary px-8 py-3 text-lg">
-              View Full Gallery
-            </button>
-            <button className="btn-secondary px-8 py-3 text-lg">
-              Watch Video Stories
-            </button>
-          </div>
         </div>
       </div>
 
