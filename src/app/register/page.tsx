@@ -47,53 +47,13 @@ export default function RegisterPage() {
           {/* Introduction */}
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-900 mb-4">
-              Register for Your{" "}
-              <span className="text-gradient">Spiritual Journey</span>
+              Register for the{" "}
+              <span className="text-gradient">Holy Land Tour</span>
             </h2>
             <p className="text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
               Take the first step toward a transformative pilgrimage to the Holy
-              Land. Our secure registration process takes just a few minutes to
-              complete.
+              Land.
             </p>
-          </div>
-
-          {/* Security Features */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-stone-200 text-center">
-              <div className="bg-green-100 p-3 rounded-lg inline-block mb-4">
-                <Shield className="w-6 h-6 text-green-600" />
-              </div>
-              <h3 className="font-semibold text-stone-900 mb-2">
-                Secure & Encrypted
-              </h3>
-              <p className="text-sm text-stone-600">
-                Your personal information is protected with bank-level security
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-stone-200 text-center">
-              <div className="bg-blue-100 p-3 rounded-lg inline-block mb-4">
-                <CreditCard className="w-6 h-6 text-blue-600" />
-              </div>
-              <h3 className="font-semibold text-stone-900 mb-2">
-                Secure Payment
-              </h3>
-              <p className="text-sm text-stone-600">
-                Powered by Stripe for safe and reliable payment processing
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-stone-200 text-center">
-              <div className="bg-purple-100 p-3 rounded-lg inline-block mb-4">
-                <Mail className="w-6 h-6 text-purple-600" />
-              </div>
-              <h3 className="font-semibold text-stone-900 mb-2">
-                Instant Confirmation
-              </h3>
-              <p className="text-sm text-stone-600">
-                Receive your confirmation email immediately after registration
-              </p>
-            </div>
           </div>
 
           {/* Registration Form */}
