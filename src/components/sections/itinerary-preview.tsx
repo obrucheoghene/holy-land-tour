@@ -67,9 +67,7 @@ export default function ItineraryPreview() {
             {` We'll`} Visit
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our carefully planned itinerary covers the most significant biblical
-            locations, allowing time for reflection, worship, and deep spiritual
-            connection.
+            What You’ll Experience on This Spiritually Enriching Tour
           </p>
         </div>
 
@@ -133,9 +131,9 @@ export default function ItineraryPreview() {
                 Expounding Biblical Significant Sites
               </h3>
               <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                During this tour Pastor Chris and Pastor Benny will expound on
-                deep biblical knowledge to guide you through this transformative
-                journey.
+                During this tour Pastor Chris and Pastor Benny Hinn will expound
+                on deep biblical knowledge to guide you through this
+                transformative journey.
               </p>
               {/* <div className="space-y-4">
                 <div className="flex items-start gap-3">

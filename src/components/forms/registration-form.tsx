@@ -12,6 +12,12 @@ import {
   Loader2,
   CheckCircle,
   CreditCard,
+  Map,
+  Network,
+  MapPin,
+  MapPinned,
+  Church,
+  MessageSquare,
 } from "lucide-react";
 
 const stripePromise = loadStripe(
@@ -65,7 +71,7 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
     },
   });
 
-  const registrationFee = isEarlyBird ? 4500 : 5000;
+  const registrationFee = isEarlyBird ? 2750 : 3000;
 
   const onSubmit = async (data: RegistrationType) => {
     setIsSubmitting(true);
@@ -141,6 +147,7 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
                   {...register("title")}
                   className="w-full pl-10 px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 >
+                  <option value="">Select title</option>
                   <option value="Pastor">Pastor</option>
                   <option value="Deacon">Deacon</option>
                   <option value="Deaconess">Deaconess</option>
@@ -163,7 +170,7 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
                 <input
                   {...register("firstName")}
                   className="w-full pl-10 pr-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="John"
+                  placeholder="Enter your first name"
                 />
               </div>
               {errors.firstName && (
@@ -182,7 +189,7 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
                 <input
                   {...register("lastName")}
                   className="w-full pl-10 pr-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="Doe"
+                  placeholder="Enter your last name"
                 />
               </div>
               {errors.lastName && (
@@ -202,7 +209,7 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
                   {...register("email")}
                   type="email"
                   className="w-full pl-10 pr-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="john.doe@email.com"
+                  placeholder="Enter your email"
                 />
               </div>
               {errors.email && (
@@ -222,7 +229,7 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
                   {...register("phone")}
                   type="tel"
                   className="w-full pl-10 pr-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="(555) 123-4567"
+                  placeholder="Enter phone number"
                 />
               </div>
               {errors.phone && (
@@ -237,12 +244,12 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
                 Kingschat Username *
               </label>
               <div className="relative">
-                <Phone className="absolute left-3 top-3 w-5 h-5 text-stone-400" />
+                <MessageSquare className="absolute left-3 top-3 w-5 h-5 text-stone-400" />
                 <input
                   {...register("kingschatId")}
                   type="tel"
                   className="w-full pl-10 pr-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="(555) 123-4567"
+                  placeholder="Enter kingschat username"
                 />
               </div>
               {errors.kingschatId && (
@@ -257,12 +264,12 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
                 Zone *
               </label>
               <div className="relative">
-                <Phone className="absolute left-3 top-3 w-5 h-5 text-stone-400" />
+                <Church className="absolute left-3 top-3 w-5 h-5 text-stone-400" />
                 <input
                   {...register("zone")}
                   type="tel"
                   className="w-full pl-10 pr-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="(555) 123-4567"
+                  placeholder="Enter your zone"
                 />
               </div>
               {errors.zone && (
@@ -293,12 +300,13 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
                 Network
               </label>
               <div className="relative">
-                <User className="absolute left-3 top-3 w-5 h-5 text-stone-400" />
+                <Network className="absolute left-3 top-3 w-5 h-5 text-stone-400" />
 
                 <select
                   {...register("network")}
                   className="w-full pl-10 px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 >
+                  <option value="">Select your network</option>
                   <option value="TNI - Translators Network International">
                     TNI - Translators Network International
                   </option>
@@ -329,12 +337,13 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
                 Country *
               </label>
               <div className="relative">
-                <User className="absolute left-3 top-3 w-5 h-5 text-stone-400" />
+                <MapPin className="absolute left-3 top-3 w-5 h-5 text-stone-400" />
 
                 <select
                   {...register("country")}
                   className="w-full pl-10 px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
                 >
+                  <option value="">Select country</option>
                   <option value="Nigeria">Nigeria</option>
                   <option value="United State">United State</option>
                 </select>
@@ -351,7 +360,7 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
                 City *
               </label>
               <div className="relative">
-                <User className="absolute left-3 top-3 w-5 h-5 text-stone-400" />
+                <MapPinned className="absolute left-3 top-3 w-5 h-5 text-stone-400" />
 
                 <input
                   {...register("city")}
@@ -379,14 +388,14 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
               <div className="flex justify-between items-center">
                 <span className="text-stone-600">Registration Fee:</span>
                 <span className="font-medium">
-                  {isEarlyBird ? "5000" : "5000"} Espees
+                  {isEarlyBird ? "3000" : "3000"} Espees
                 </span>
               </div>
 
               {isEarlyBird && (
                 <div className="flex justify-between items-center text-green-600">
                   <span>Early Registration Discount:</span>
-                  <span className="font-medium">-500 Espees</span>
+                  <span className="font-medium">-250 Espees</span>
                 </div>
               )}
 

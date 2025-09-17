@@ -23,7 +23,7 @@ const galleryItems = [
   },
   {
     id: 3,
-    type: "video",
+    type: "image",
     src: "/assets/hlt-pst10.jpg",
     alt: "Bethlehem Tour",
     title: "Bethlehem Experience",
@@ -91,8 +91,8 @@ export default function PreviousHighlight() {
           </h2>
           <p className="text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
             Get a glimpse of the incredible experiences and sacred moments from
-            our previous Holy Land tours. See the places {`you'll`} visit and
-            the memories {`you'll`} create.
+            previous Holy Land tours with Pastor Chris. See the places{" "}
+            {`you'll`} visit and the memories {`you'll`} create.
           </p>
         </div>
 
@@ -102,7 +102,7 @@ export default function PreviousHighlight() {
             <div
               key={item.id}
               className="group relative cursor-pointer hover-lift"
-              onClick={() => openLightbox(index)}
+              // onClick={() => openLightbox(index)}
             >
               <div className="relative h-80 rounded-2xl overflow-hidden">
                 <Image
@@ -175,7 +175,7 @@ export default function PreviousHighlight() {
                 src={galleryItems[currentIndex].src}
                 alt={galleryItems[currentIndex].alt}
                 fill
-                className="object-contain"
+                className=" w-full h-full"
               />
             </div>
 

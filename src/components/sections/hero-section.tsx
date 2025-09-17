@@ -66,11 +66,10 @@ export default function HeroSection() {
             Holy Land Tour
           </h1>
           <div className="text-2xl md:text-3xl mb-4 text-primary-200">
-            with Pastor Chris & Pastor Benny
+            with Pastor Chris & Pastor Benny Hinn
           </div>
           <p className="text-xl md:text-2xl mb-8 text-gray-200 max-w-2xl mx-auto leading-relaxed">
-            Experience the footsteps of Jesus in a life-changing spiritual
-            journey through the Holy Land
+            Join Pastor Chris and Pastor Benny Hinn to walk where Jesus Walked.
           </p>
         </div>
 

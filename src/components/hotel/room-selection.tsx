@@ -58,7 +58,7 @@ export default function RoomSelection({
           Choose Your <span className="text-gradient">Accommodation</span>
         </h2>
         <p className="text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
-          Select from our carefully chosen 4-star hotels throughout Israel. All
+          Select from our carefully chosen 5-star hotels throughout Israel. All
           rooms include breakfast, air conditioning, and are located near major
           biblical sites.
         </p>
@@ -108,7 +108,7 @@ export default function RoomSelection({
               )}
 
               {/* Room Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative aspect-video overflow-hidden">
                 <Image
                   src={roomType.imageUrl}
                   alt={roomType.name}
@@ -254,7 +254,7 @@ export default function RoomSelection({
                 <Star className="w-8 h-8 text-accent-600" />
               </div>
               <h4 className="font-semibold text-stone-900 mb-2">
-                4-Star Quality
+                5-Star Quality
               </h4>
               <p className="text-stone-600 text-sm">
                 Comfortable, modern accommodations

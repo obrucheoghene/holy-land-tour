@@ -30,7 +30,7 @@ export default function RegisterPage() {
               <h1 className="text-2xl font-serif font-bold text-stone-900">
                 Holy Land Tour Registration
               </h1>
-              <p className="text-stone-600">March 15-25, 2025</p>
+              <p className="text-stone-600">Holy Land Tour 2025</p>
             </div>
 
             <div className="flex items-center gap-2 text-sm text-stone-500">
@@ -66,23 +66,17 @@ export default function RegisterPage() {
                 Need Help with Registration?
               </h3>
               <p className="text-stone-600 mb-6">
-                Our team is here to assist you with any questions about the
+                We are here to assist you with any questions about the
                 registration process or tour details.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:+15551234567" className="btn-primary px-6 py-3">
-                  Call (555) 123-4567
-                </a>
-                <a
-                  href="mailto:info@holylandtour.com"
-                  className="btn-outline px-6 py-3"
-                >
-                  Email Support
-                </a>
+                <button className="btn-outline px-6 py-3">
+                  Contact Us Kingschat
+                </button>
+                {/* <button className="btn-outline px-6 py-3">
+                  Schedule a Call
+                </button> */}
               </div>
-              <p className="text-sm text-stone-500 mt-4">
-                Support hours: Monday-Friday 9 AM - 6 PM EST
-              </p>
             </div>
           </div>
         </div>

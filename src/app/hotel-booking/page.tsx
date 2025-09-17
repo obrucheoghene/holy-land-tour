@@ -45,27 +45,22 @@ export default function HotelBookingPage() {
         <SimpleHotelBooking onRoomSelect={handleRoomSelect} />
 
         {/* Support */}
-        <div className="mt-16 text-center">
-          <div className="bg-white rounded-xl p-8 shadow-sm border border-stone-200 max-w-lg mx-auto">
-            <h3 className="text-lg font-serif font-semibold text-stone-900 mb-2">
-              Need Help?
+        <div className="mt-12 text-center">
+          <div className="bg-white rounded-xl p-8 shadow-sm border border-stone-200">
+            <h3 className="text-xl font-serif font-semibold text-stone-900 mb-4">
+              Need Help with your Booking?
             </h3>
-            <p className="text-stone-600 mb-4 text-sm">
-              Our team is here to assist with your hotel booking
+            <p className="text-stone-600 mb-6">
+              We are here to assist you with any questions about the
+              registration process or tour details.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
-                href="tel:+15551234567"
-                className="btn-primary px-4 py-2 text-sm"
-              >
-                📞 (555) 123-4567
-              </a>
-              <a
-                href="mailto:hotels@holylandtour.com"
-                className="btn-outline px-4 py-2 text-sm"
-              >
-                ✉️ Email Support
-              </a>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="btn-outline px-6 py-3">
+                Contact Us Kingschat
+              </button>
+              {/* <button className="btn-outline px-6 py-3">
+                  Schedule a Call
+                </button> */}
             </div>
           </div>
         </div>

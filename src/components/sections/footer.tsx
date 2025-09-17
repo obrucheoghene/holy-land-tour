@@ -1,11 +1,4 @@
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Facebook,
-  Instagram,
-  Youtube,
-} from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 import GoogleTranslate from "@/components/google-translate";
 
 export default function Footer() {
@@ -48,7 +41,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-stone-300 text-sm">Phone</p>
-                  <p className="text-white font-medium">(555) 123-4567</p>
+                  <p className="text-white font-medium">(234) 123-4567</p>
                 </div>
               </div>
 
@@ -71,9 +64,9 @@ export default function Footer() {
                 <div>
                   <p className="text-stone-300 text-sm">Office</p>
                   <p className="text-white font-medium">
-                    123 Ministry Lane
+                    22-23 Billings Way
                     <br />
-                    Atlanta, GA 30309
+                    Ikeja, Lagos Nigeria
                   </p>
                 </div>
               </div>
@@ -102,14 +95,7 @@ export default function Footer() {
                   Itinerary
                 </a>
               </li>
-              <li>
-                <a
-                  href="#testimonials"
-                  className="text-stone-300 hover:text-accent-300 transition-colors"
-                >
-                  Testimonials
-                </a>
-              </li>
+
               <li>
                 <a
                   href="#faq"
@@ -139,52 +125,12 @@ export default function Footer() {
         </div>
 
         {/* Social Media & Bottom Section */}
-        <div className="border-t border-stone-700 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            {/* Social Media */}
-            <div className="flex items-center gap-6">
-              <p className="text-stone-300 font-medium">Follow Our Journey:</p>
-              <div className="flex gap-4">
-                <a
-                  href="#"
-                  className="bg-stone-800 hover:bg-primary-600 p-3 rounded-lg transition-colors duration-300"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="w-5 h-5 text-white" />
-                </a>
-                <a
-                  href="#"
-                  className="bg-stone-800 hover:bg-primary-600 p-3 rounded-lg transition-colors duration-300"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-5 h-5 text-white" />
-                </a>
-                <a
-                  href="#"
-                  className="bg-stone-800 hover:bg-primary-600 p-3 rounded-lg transition-colors duration-300"
-                  aria-label="YouTube"
-                >
-                  <Youtube className="w-5 h-5 text-white" />
-                </a>
-              </div>
-            </div>
-
-            {/* Call to Action */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="btn-accent px-6 py-2 text-sm">
-                Register Now
-              </button>
-              <button className="btn-outline px-6 py-2 text-sm border-stone-600 text-stone-300 hover:bg-stone-700 hover:text-white">
-                Download Brochure
-              </button>
-            </div>
-          </div>
-
+        <div className=" border-stone-700">
           {/* Copyright */}
           <div className="text-center mt-8 pt-6 border-t border-stone-800">
             <p className="text-stone-400 text-sm">
-              © 2025 Holy Land Tour with Pastor Chris & Pastor Benny. All rights
-              reserved.
+              © 2025 Holy Land Tour with Pastor Chris & Pastor Benny Hinn. All
+              rights reserved.
             </p>
             <div className="flex justify-center gap-6 mt-4">
               <a

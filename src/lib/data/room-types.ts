@@ -79,7 +79,7 @@ export const roomTypes: RoomType[] = [
     maxOccupancy: 2,
     availableRooms: 8,
     imageUrl:
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070",
+      "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=2070",
     amenities: [
       "Separate living room",
       "Premium bathroom with bathtub",

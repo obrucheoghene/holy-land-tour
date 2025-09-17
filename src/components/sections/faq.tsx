@@ -22,17 +22,17 @@ const faqCategories = [
       {
         question: "How do I register for the Holy Land Tour?",
         answer:
-          "Registration is simple! Click the \"Register Now\" button and fill out our secure online form. You'll need to provide personal information, emergency contacts, and complete the registration fee payment via Stripe. You'll receive a confirmation email immediately after successful registration.",
+          "Registration is simple! Click the \"Register Now\" button and fill out our secure online form. You'll need to provide personal information, and complete the registration fee payment with Espees. You'll receive a confirmation email immediately after successful registration.",
       },
       {
         question: "What is the registration fee and what does it include?",
         answer:
-          "The registration fee is $299 and includes all guided tours, entrance fees to biblical sites, daily breakfast and dinner, comfortable accommodation, air-conditioned transportation, and spiritual guidance from Pastor Chris and Pastor Benny. International flights and lunch are not included.",
+          "The registration fee is 3000 Espees and includes all guided tours, entrance fees to biblical sites, daily breakfast and dinner, comfortable accommodation, air-conditioned transportation, and spiritual guidance from Pastor Chris and Pastor Benny. International flights and lunch are not included.",
       },
       {
-        question: "Is there an early bird discount?",
+        question: "Is there an early registration discount?",
         answer:
-          "Yes! Register by February 15th, 2025, and save $50 on your registration fee. This brings your total to $249. We encourage early registration as spots are limited to 50 pilgrims for an intimate experience.",
+          "Yes! Register by October 15th, 2025, and save $250 on your registration fee. This brings your total to $2750. We encourage early registration as spots are limited to few pilgrims.",
       },
       {
         question: "What is your refund policy?",
@@ -55,7 +55,7 @@ const faqCategories = [
       {
         question: "What type of accommodation is provided?",
         answer:
-          "We stay in comfortable 4-star hotels throughout Israel. All rooms are air-conditioned with private bathrooms. You can choose between single occupancy, double occupancy, or upgrade to suites. Hotel booking is separate from registration and can be done through our hotel booking system.",
+          "We stay in comfortable 5-star hotels throughout Israel. All rooms are air-conditioned with private bathrooms. You can choose between single occupancy, double occupancy, or upgrade to suites. Hotel booking is separate from registration and can be done through our hotel booking system.",
       },
       {
         question: "What should I pack for the Holy Land?",
@@ -149,7 +149,7 @@ export default function FAQSection() {
           </h2>
           <p className="text-xl text-stone-600 max-w-3xl mx-auto leading-relaxed">
             Everything you need to know about joining our Holy Land pilgrimage.
-            {`Can't`} find your answer? Contact us directly for personalized
+            {` Can't`} find your answer? Contact us directly for personalized
             assistance.
           </p>
         </div>
@@ -254,17 +254,16 @@ export default function FAQSection() {
                 </h3>
               </div>
               <p className="text-lg text-stone-600 mb-8">
-                Our team is here to help you with any additional questions about
-                your Holy Land pilgrimage.{` We're`} committed to making your
-                spiritual journey as smooth and meaningful as possible.
+                We are here to help you with any additional questions about your
+                Holy Land pilgrimage.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="btn-primary px-6 py-3">
-                  Contact Us Directly
+                  Contact Us Kingschat
                 </button>
-                <button className="btn-outline px-6 py-3">
+                {/* <button className="btn-outline px-6 py-3">
                   Schedule a Call
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
