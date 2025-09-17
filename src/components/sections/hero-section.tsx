@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Users } from "lucide-react";
 import Link from "next/link";
+import { TOUR_DATE } from "@/lib/data/constants";
 
 interface TimeLeft {
   days: number;
@@ -21,12 +22,12 @@ export default function HeroSection() {
     seconds: 0,
   });
 
-  const tourDate = new Date(process.env.NEXT_PUBLIC_TOUR_DATE || "2025-03-15");
+  // const tourDate = new Date();
 
   useEffect(() => {
     const timer = setInterval(() => {
       const now = new Date().getTime();
-      const distance = tourDate.getTime() - now;
+      const distance = TOUR_DATE.getTime() - now;
 
       if (distance > 0) {
         setTimeLeft({
@@ -41,7 +42,7 @@ export default function HeroSection() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, [tourDate]);
+  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">

@@ -7,14 +7,14 @@ import { eq } from "drizzle-orm";
 import { sendConfirmationEmail } from "@/lib/email";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2024-06-20",
+  // apiVersion: "2024-06-20",
 });
 
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
 
 export async function POST(request: NextRequest) {
   const body = await request.text();
-  const headersList = headers();
+  const headersList = await headers();
   const signature = headersList.get("stripe-signature");
 
   if (!signature) {

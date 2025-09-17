@@ -5,7 +5,7 @@ import { adminUsers } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import bcrypt from "bcryptjs";
 
-export const authOptions = {
+export const authOptions = NextAuth({
   providers: [
     CredentialsProvider({
       name: "credentials",
@@ -56,14 +56,14 @@ export const authOptions = {
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
-        token.role = user.role;
+        token.name = user.name;
       }
       return token;
     },
     async session({ session, token }) {
       if (token) {
-        session.user.id = token.sub;
-        session.user.role = token.role;
+        // session.user.id = token.sub;
+        // session.user.role = token.role;
       }
       return session;
     },
@@ -74,6 +74,6 @@ export const authOptions = {
   session: {
     strategy: "jwt" as const,
   },
-};
+});
 
 export const { handlers, auth, signIn, signOut } = NextAuth(authOptions);

@@ -223,7 +223,7 @@ export default function RoomSelection({
       <div className="bg-stone-50 rounded-2xl p-8">
         <div className="max-w-4xl mx-auto">
           <h3 className="text-2xl font-serif font-semibold text-stone-900 mb-6 text-center">
-            What's Included with Every Room
+            {`What's`} Included with Every Room
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

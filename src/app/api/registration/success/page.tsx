@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { CheckCircle, Mail, Calendar, MapPin, Users } from "lucide-react";
 import Link from "next/link";
 
-function SuccessContent() {
+export default function SuccessContent() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-primary-50 flex items-center justify-center p-4">
       <div className="max-w-2xl mx-auto text-center">

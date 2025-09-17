@@ -65,25 +65,25 @@ const navigation = [
 export default function AdminLayout({ children }: AdminLayoutProps) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
-  const { data: session, status } = useSession();
+  // const { data: session, status } = useSession();
   const router = useRouter();
   const pathname = usePathname();
 
-  if (status === "loading") {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-stone-50">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
-          <p className="text-stone-600">Loading...</p>
-        </div>
-      </div>
-    );
-  }
+  // if (status === "loading") {
+  //   return (
+  //     <div className="min-h-screen flex items-center justify-center bg-stone-50">
+  //       <div className="text-center">
+  //         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+  //         <p className="text-stone-600">Loading...</p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
-  if (status === "unauthenticated") {
-    router.push("/admin/login");
-    return null;
-  }
+  // if (status === "unauthenticated") {
+  //   router.push("/admin/login");
+  //   return null;
+  // }
 
   const handleSignOut = async () => {
     await signOut({ callbackUrl: "/admin/login" });
@@ -199,10 +199,10 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
               </div>
               <div className="flex-1 min-w-0">
                 <div className="font-medium text-sm text-stone-900 truncate">
-                  {session?.user?.name}
+                  {/* {session?.user?.name} */}name
                 </div>
                 <div className="text-xs text-stone-500 truncate">
-                  {session?.user?.email}
+                  {/* {session?.user?.email} */}email
                 </div>
               </div>
             </div>
@@ -252,7 +252,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                     <User className="w-4 h-4 text-white" />
                   </div>
                   <span className="font-medium text-stone-900 text-sm hidden md:block">
-                    {session?.user?.name?.split(" ")[0]}
+                    {/* {session?.user?.name?.split(" ")[0]} */} name
                   </span>
                   <ChevronDown className="w-4 h-4 text-stone-500" />
                 </button>
@@ -261,13 +261,13 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                   <div className="absolute right-0 mt-2 w-56 bg-white border border-stone-200 rounded-lg shadow-lg z-50">
                     <div className="p-4 border-b border-stone-200">
                       <div className="font-medium text-stone-900">
-                        {session?.user?.name}
+                        {/* {session?.user?.name} */}name
                       </div>
                       <div className="text-sm text-stone-500">
-                        {session?.user?.email}
+                        {/* {session?.user?.email} */} email
                       </div>
                       <div className="text-xs text-primary-600 mt-1 capitalize">
-                        {session?.user?.role || "Admin"}
+                        {/* {session?.user?.name || "Admin"} */} Admin
                       </div>
                     </div>
                     <div className="p-2">

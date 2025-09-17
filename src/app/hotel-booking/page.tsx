@@ -3,8 +3,14 @@
 import { ArrowLeft, Shield, Bed, CreditCard } from "lucide-react";
 import Link from "next/link";
 import SimpleHotelBooking from "@/components/hotel/room-selection";
+import { RoomType } from "@/lib/data/room-types";
 
 export default function HotelBookingPage() {
+  const handleRoomSelect = (room: RoomType) => {
+    console.log(room);
+    // setSelectedRoom(room);
+    // setStep("details");
+  };
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-50 to-primary-50">
       {/* Header */}
@@ -34,52 +40,9 @@ export default function HotelBookingPage() {
         </div>
       </div>
 
-      {/* Trust Indicators */}
-      <div className="bg-white border-b border-stone-200">
-        <div className="container mx-auto px-4 py-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            <div className="flex items-center justify-center gap-3 text-center">
-              <div className="bg-green-100 p-2 rounded-lg">
-                <Bed className="w-5 h-5 text-green-600" />
-              </div>
-              <div>
-                <div className="font-semibold text-stone-900 text-sm">
-                  4-Star Hotels
-                </div>
-                <div className="text-stone-600 text-xs">Premium quality</div>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-center gap-3 text-center">
-              <div className="bg-blue-100 p-2 rounded-lg">
-                <CreditCard className="w-5 h-5 text-blue-600" />
-              </div>
-              <div>
-                <div className="font-semibold text-stone-900 text-sm">
-                  Secure Payment
-                </div>
-                <div className="text-stone-600 text-xs">Stripe protected</div>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-center gap-3 text-center">
-              <div className="bg-purple-100 p-2 rounded-lg">
-                <Shield className="w-5 h-5 text-purple-600" />
-              </div>
-              <div>
-                <div className="font-semibold text-stone-900 text-sm">
-                  Free Cancellation
-                </div>
-                <div className="text-stone-600 text-xs">Up to 14 days</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* Main Content */}
       <div className="container mx-auto px-4 py-12">
-        <SimpleHotelBooking />
+        <SimpleHotelBooking onRoomSelect={handleRoomSelect} />
 
         {/* Support */}
         <div className="mt-16 text-center">

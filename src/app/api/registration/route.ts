@@ -7,7 +7,7 @@ import Stripe from "stripe";
 import { sendConfirmationEmail } from "@/lib/email";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2024-06-20",
+  // apiVersion: "2024-06-20",
 });
 
 const registrationSchema = z.object({
@@ -115,7 +115,7 @@ export async function POST(request: NextRequest) {
 
     if (error instanceof z.ZodError) {
       return NextResponse.json(
-        { error: "Invalid registration data", details: error.errors },
+        { error: "Invalid registration data", details: error },
         { status: 400 }
       );
     }

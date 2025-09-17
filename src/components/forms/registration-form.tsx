@@ -5,7 +5,14 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { loadStripe } from "@stripe/stripe-js";
-import { User, Mail, Phone, Loader2 } from "lucide-react";
+import {
+  User,
+  Mail,
+  Phone,
+  Loader2,
+  CheckCircle,
+  CreditCard,
+} from "lucide-react";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
@@ -15,16 +22,16 @@ const registrationSchema = z.object({
   title: z.string().min(1, "Select your title"),
   firstName: z.string().min(2, "First name must be at least 2 characters"),
   lastName: z.string().min(2, "Last name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
+  email: z.email("Please enter a valid email address"),
   phone: z.string().min(10, "Please enter a valid phone number"),
   kingschatId: z.string().min(3, "Please enter a kingschat username"),
   zone: z.string(),
   network: z.string(),
-  country: z.string().default("United States"),
+  country: z.string(),
   city: z.string().min(2, "City is required"),
 });
 
-type RegistrationData = z.infer<typeof registrationSchema>;
+type RegistrationType = z.infer<typeof registrationSchema>;
 
 interface RegistrationFormProps {
   onClose?: () => void;
@@ -42,16 +49,25 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
     formState: { errors },
     watch,
     trigger,
-  } = useForm<RegistrationData>({
+  } = useForm<RegistrationType>({
     resolver: zodResolver(registrationSchema),
     defaultValues: {
-      country: "United States",
+      title: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      kingschatId: "",
+      zone: "",
+      network: "",
+      country: "",
+      city: "",
     },
   });
 
-  const registrationFee = isEarlyBird ? 249 : 299;
+  const registrationFee = isEarlyBird ? 4500 : 5000;
 
-  const onSubmit = async (data: RegistrationData) => {
+  const onSubmit = async (data: RegistrationType) => {
     setIsSubmitting(true);
     setSubmitError("");
 
@@ -349,6 +365,57 @@ export default function RegistrationForm({ onClose }: RegistrationFormProps) {
                 </p>
               )}
             </div>
+          </div>
+
+          <div className="bg-primary-50 rounded-xl p-6 border border-primary-200">
+            <div className="flex items-center gap-3 mb-4">
+              <CreditCard className="w-6 h-6 text-primary-600" />
+              <h4 className="text-lg font-semibold text-stone-900">
+                Payment Details
+              </h4>
+            </div>
+
+            <div className="space-y-3">
+              <div className="flex justify-between items-center">
+                <span className="text-stone-600">Registration Fee:</span>
+                <span className="font-medium">
+                  {isEarlyBird ? "5000" : "5000"} Espees
+                </span>
+              </div>
+
+              {isEarlyBird && (
+                <div className="flex justify-between items-center text-green-600">
+                  <span>Early Registration Discount:</span>
+                  <span className="font-medium">-500 Espees</span>
+                </div>
+              )}
+
+              <div className="border-t border-primary-200 pt-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-lg font-semibold text-stone-900">
+                    Total:
+                  </span>
+                  <span className="text-2xl font-bold text-primary-600">
+                    {registrationFee} Espees
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {isEarlyBird && (
+              <div className="mt-4 p-3 bg-green-100 border border-green-300 rounded-lg">
+                <div className="flex items-center gap-2">
+                  <CheckCircle className="w-5 h-5 text-green-600" />
+                  <span className="text-green-800 font-medium">
+                    Early Registration Special Applied!
+                  </span>
+                </div>
+                <p className="text-green-700 text-sm mt-1">
+                  {`You've`} saved 500 Espees by registering before October
+                  15th, 2025.
+                </p>
+              </div>
+            )}
           </div>
 
           <div className="flex gap-4">
